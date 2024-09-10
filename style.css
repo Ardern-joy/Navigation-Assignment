@@ -1,0 +1,55 @@
+/* navigation styling */
+body{
+    background-color: aqua;
+}
+.responsive.nav{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content:flex-end; /* allign menu item to the right corner */
+    align-items: center;
+    position: relative; /* ensure position for toggle button */
+}
+#menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+#menu a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+.menu.toggle {
+    display:none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    position: fixed;  /*fix position to the top right corner */
+    top:20px;  /* distance from the top of the viewport */
+    right: 20px; /*distance from the top of the viewport */
+    z-index: 1000; /* ensure it stays above other content */
+}
+
+/*responsive styles*/
+@media (max-width: 768px)  
+   {} .menu.toggle {
+        display: block; /*show toggle on email screens */
+    }
+#menu {
+    display: none; /* hide menu on small screens*/
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center; /* center the nav items when displayed */
+    width:100%; /* take full width*/
+    margin-top: 40px; /* add some spacing from the togggle button*/
+
+}
+
+#menu.show {
+    display: flex; /*show menu when toggle is clicked */
+}
